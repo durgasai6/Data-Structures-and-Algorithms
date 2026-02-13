@@ -25,7 +25,7 @@ int main(){
         cin>>n>>m>>k;
         long long answer=1;
         if(k<=m && n>k){
-            cout<<-1<<endl;
+            cout<<0<<endl;
             continue;
         }
         if(n<=m+1){
