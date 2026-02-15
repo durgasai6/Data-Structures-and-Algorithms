@@ -11,9 +11,8 @@ int main(){
     for(int i=0;i<t.size();i++){
         freq[t[i]]++;
     }
-    int l=0, len = INT_MAX, count=0;
+    int l=0, len = INT_MAX, count=0,start=0;
     int required=t.size();
-    string ans="";
     for(int r=0;r<s.size();r++){
         if(freq[s[r]]>0){
             count++;
@@ -23,7 +22,7 @@ int main(){
         while(count==required){
             if(r-l+1 < len){
                 len=r-l+1;
-                ans=s.substr(l,len);
+                start=l;
             }
             freq[s[l]]++;
             if(freq[s[l]]>0){
@@ -32,7 +31,12 @@ int main(){
             l++;
         }
     }
-    cout<<ans<<endl;
+    if(len==INT_MAX){
+        cout<<""<<endl;
+    }
+    else{
+        cout<<s.substr(start,len)<<endl;
+    }
     return 0;
 }
 
