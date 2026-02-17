@@ -11,18 +11,17 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>nums[i];
     }
-    vector<int> answer(n),left(n),right(n);
-    right[n-1]=1;
-    left[0]=1;
+    vector<int> answer(n);
+    answer[0]=1;
     for(int i=1;i<n;i++){
-        left[i]=left[i-1]*nums[i-1];
+        answer[i]=answer[i-1]*nums[i-1];
     }
-    for(int i=n-2;i>=0;i--){
-        right[i]=right[i+1]*nums[i+1];
+    int right=1;
+    for(int i=n-1;i>=0;i--){
+        answer[i]=right*answer[i];
+        right=right*nums[i];
     }
-    for(int i=0;i<n;i++){
-        answer[i]=left[i]*right[i];
-    }
+    
     for(int i=0;i<n;i++){
         cout<<answer[i]<<" ";
     }
@@ -52,3 +51,40 @@ Constraints:
 2 <= nums.length <= 105
 -30 <= nums[i] <= 30
 The input is generated such that answer[i] is guaranteed to fit in a 32-bit integer.*/
+
+
+
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main(){
+//     ios::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int n;
+//     cin>>n;
+//     vector<int> nums(n);
+//     for(int i=0;i<n;i++){
+//         cin>>nums[i];
+//     }
+//     vector<int> answer(n),left(n),right(n);
+//     left[0]=1;
+//     for(int i=1;i<n;i++){
+//         left[i]=left[i-1]*nums[i-1];
+//     }
+//     right[n-1]=1;
+//     for(int i=n-2;i>=0;i--){
+//         right[i]=right[i+1]*nums[i+1];
+//     }
+//     for(int i=0;i<n;i++){
+//         answer[i]=left[i]*right[i];
+//     }
+    
+//     for(int i=0;i<n;i++){
+//         cout<<answer[i]<<" ";
+//     }
+    
+//     return 0;
+// }
