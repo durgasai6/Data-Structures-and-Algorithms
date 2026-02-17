@@ -15,7 +15,7 @@ int main(){
     long long answer=0;
     unordered_map<long long, int> freq;
     freq[0]=1;
-    for(int i=0;i<=n;i++){
+    for(int i=1;i<=n;i++){
         if(freq.count(pref[i]-k)){
             answer+=freq[pref[i]-k];
         }
