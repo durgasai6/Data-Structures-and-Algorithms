@@ -8,9 +8,11 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>nums[i];
     }
-    int total=0,current=0,answer=0,left=0;
-    for(int r=0;r<n;r++){
-        
+    int maxsum=0,current=0;
+    for(int i=0;i<n;i++){
+        current=max(nums[i],current+nums[i]);
+        maxsum=max(maxsum,current);
     }
+    cout<<maxsum<<endl;
     return 0;
 }
