@@ -49,3 +49,42 @@ int main(){
     
     return 0;
 }
+
+
+
+/*Description
+
+Find all prime numbers between the range from L to R (endpoints inclusive). Print them in non-decreasing order.
+
+Input Format
+
+The only line of input contains L and R, representing the range.
+
+Output Format
+
+The first line of output contains n - the number of prime numbers in between [L, R].
+The second line contains n space-separated integers denoting the prime numbers between [L, R] in non-decreasing order.
+
+Constraints
+
+1 ≤ L ≤ R ≤ 1012
+R - L + 1 ≤ 106 
+
+Sample Input 1
+ Copy
+
+1 20
+Sample Output 1
+ Copy
+
+8
+2 3 5 7 11 13 17 19
+Sample Input 2
+ Copy
+
+100000000000 100000000020
+Sample Output 2
+ Copy
+
+2
+100000000003 100000000019*/
