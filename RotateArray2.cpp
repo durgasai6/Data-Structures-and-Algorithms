@@ -4,6 +4,7 @@ using namespace std;
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+
     int n,k;
     cin>>n>>k;
     vector<int> nums(n);
@@ -11,19 +12,15 @@ int main(){
         cin>>nums[i];
     }
     k=k%n;
-    vector<int> result;
-    for(int i=n-k;i<n;i++){
-        result.push_back(nums[i]);
-    }
-    for(int i=0;i<n-k;i++){
-        result.push_back(nums[i]);
-    }
+    reverse(nums.begin(),nums.end());
+    reverse(nums.begin(),nums.begin()+k);
+    reverse(nums.begin()+k,nums.end());
+
     for(int i=0;i<n;i++){
-        cout<<result[i]<<" ";
+        cout<<nums[i]<<" ";
     }
     return 0;
 }
-
 
 
 /*Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
@@ -51,4 +48,5 @@ Constraints:
 
 1 <= nums.length <= 105
 -231 <= nums[i] <= 231 - 1
-0 <= k <= 105*/
+0 <= k <= 105
+ */
