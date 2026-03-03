@@ -16,9 +16,9 @@ int main(){
     st.push(0);
     for(int i=1;i<n;i++){
         while(!st.empty() && temperatures[i]>temperatures[st.top()]){
-            int prev=st.top();
+            int temp=st.top();
             st.pop();
-            answer[prev]=i-prev;
+            answer[temp]=i-temp;
         }
         st.push(i);
     }
