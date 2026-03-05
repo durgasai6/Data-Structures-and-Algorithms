@@ -2,6 +2,7 @@
 using namespace std;
 
 
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL);
@@ -11,16 +12,37 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>nums[i];
     }
-    priority_queue<int> pq;
+    priority_queue<int,vector<int>,greater<int>> pq;
     for(int i=0;i<n;i++){
         pq.push(nums[i]);
+        if(pq.size()>k){
+            pq.pop();
+        }
     }
-    for(int i=0;i<k-1;i++){
-        pq.pop();
-    }
-    cout<<pq.top();
+    cout<<pq.top()<<endl;
     return 0;
 }
+
+
+// int main(){
+//     ios::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n,k;
+//     cin>>n>>k;
+//     vector<int> nums(n);
+//     for(int i=0;i<n;i++){
+//         cin>>nums[i];
+//     }
+//     priority_queue<int> pq;
+//     for(int i=0;i<n;i++){
+//         pq.push(nums[i]);
+//     }
+//     for(int i=0;i<k-1;i++){
+//         pq.pop();
+//     }
+//     cout<<pq.top();
+//     return 0;
+// }
 
 
 
