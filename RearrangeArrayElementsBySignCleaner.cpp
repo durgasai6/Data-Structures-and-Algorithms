@@ -12,7 +12,7 @@ int main(){
         cin>>nums[i];
     }
     vector<int> answer(n);
-    int pos=0,neg=0;
+    int pos=0,neg=1;
     for(int i=0;i<n;i++){
         if(nums[i]>0){
             answer[pos]=nums[i];
