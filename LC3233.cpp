@@ -8,7 +8,7 @@ int main(){
     long long l, r;
     cin>>l>>r;
     long long last=sqrt(r);
-    vector<bool> primes(last,true);
+    vector<bool> primes(last+1,true);
     primes[0]=false;
     primes[1]=false;
     for(int i=2;i<=last;i++){
