@@ -8,45 +8,44 @@ int main(){
     string word1,word2;
     cin>>word1>>word2;
     vector<int> freq1(26,0), freq2(26,0);
-    int distinct1=0, distinct2=0;
+    
     for(char c:word1){
         freq1[c-'a']++;
     }
     for(char c:word2){
         freq2[c-'a']++;
     }
-    for(int i=0;i<26;i++){
-        if(freq1[i]){
-            distinct1++;
-        }
-        if(freq2[i]){
-            distinct2++;
-        }
-    }
+    
 
     for(int i=0;i<26;i++){
         for(int j=0;j<26;j++){
             if(freq1[i]==0 || freq2[j] == 0){
                 continue;
             }
-            int t1=distinct1;
-            int t2=distinct2;
-            if(freq1[i]==1){
-                t1--;
+
+            freq1[i]--;
+            freq2[i]++;
+            freq1[j]++;
+            freq2[j]--;
+            int distinct1=0, distinct2=0;
+            for(int k=0;k<26;k++){
+                if(freq1[k]>0){
+                    distinct1++;
+                }
+                if(freq2[k]>0){
+                    distinct2++;
+                }
             }
-            if(freq1[j]==0){
-                t1++;
-            }
-            if(freq2[j]==1){
-                t2--;
-            }
-            if(freq2[i]==0){
-                t2++;
-            }
-            if(t1==t2){
+            if(distinct1==distinct2){
                 cout<<"true"<<endl;
                 return 0;
             }
+            freq1[i]++;
+            freq2[i]--;
+            freq1[j]--;
+            freq2[j]++;
+
+            
         }
     }
     cout<<"false"<<endl;
