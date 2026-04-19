@@ -15,9 +15,8 @@ int main(){
     vector<int> ans(n,0);
     for(int i=0;i<n;i++){
         while(!st.empty() && temp[i]>temp[st.top()]){
-            int last=st.top();
+            ans[st.top()]=i-st.top();
             st.pop();
-            ans[last]=i-last;
         }
         st.push(i);
     }
