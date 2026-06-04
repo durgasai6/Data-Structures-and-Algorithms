@@ -48,6 +48,10 @@ int main(){
     }
     int a,b;
     cin>>a>>b;
+    tail1=head1;
+    for(int i=0;i<=b;i++){
+        tail1=tail1->next;
+    }
     Node* t2=head1;
     for(int i=0;i<b;i++){
         t2=t2->next;
