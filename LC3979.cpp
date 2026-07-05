@@ -37,7 +37,7 @@ int main(){
 
 
 
-//*You are given an integer array nums of length n and an integer k.
+/*You are given an integer array nums of length n and an integer k.
 
 A pair of indices (i, j) is called valid if:
 
@@ -82,4 +82,4 @@ Constraints:
 
 2 <= n == nums.length <= 105
 1 <= nums[i] <= 109
-1 <= k <= n - 1
+1 <= k <= n - 1*/
